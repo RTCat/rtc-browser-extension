@@ -38,4 +38,4 @@ jpm run -b nightly      # test in Firefox Nightly without making the XPI
 
 jpm xpi                 # it will create xpi file
 ```
-5. 提交XPI:[https://addons.mozilla.org/en-US/developers/addon/submit/1](https://addons.mozilla.org/en-US/developers
+5. 提交XPI:[https://addons.mozilla.org/en-US/developers](https://addons.mozilla.org/en-US/developers/addon/submit/1)
