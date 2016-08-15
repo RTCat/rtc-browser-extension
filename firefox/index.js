@@ -7,12 +7,12 @@ var configToEnableScreenCapturing = 'media.getusermedia.screensharing.enabled';
 
 // replace your own domains with below array
 var arrayOfMyOwnDomains = [
-    "https://localhost/*",
-    "https://shishimao.com/*",
-    "https://rtcat.io/*",
-    "https://rtcat.io:4001/*",
-    "https://ecloudeal.com/*",
-    "https://rtc-rooms.com/*"
+    "localhost",
+    "shishimao.com",
+    "rtcat.io",
+    "rtcat.io:4001",
+    "ecloudeal.com",
+    "rtc-rooms.com"
 ];
 
 // e.g. if 127.0.0.1 or localhost is already allowed by anyone else
