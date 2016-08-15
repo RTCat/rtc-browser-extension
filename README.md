@@ -26,8 +26,8 @@ clone项目至本地，修改 `chrome/manifest.json` 配置文件中的 `externa
 ### Firefox插件
 
 1. 注册火狐Addons中心账号: [https://addons.mozilla.org/en-US/firefox/users/register](https://addons.mozilla.org/en-US/firefox/users/register)
-2. 更改本插件名称: [./package.json#L3](./package.json#L3)
-3. 将你的域名添加至此: [./index.js#L7](./index.js#L7)
+2. 更改本插件名称: [./firefox/package.json#L4](./package.json#L4)
+3. 将你的域名添加至此: [./firefox/index.js#L8](./index.js#L8)
 4. 生成 XPI。
 ```
 [sudo] npm install jpm --global
