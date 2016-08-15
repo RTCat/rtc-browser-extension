@@ -3,8 +3,8 @@
 
 ## 下载实时猫官方插件
 
-- Chrome web store [RealTimeCat ScreenSharing Extension ](https://chrome.google.com/webstore/detail/realtimecat-screensharing/kopddpjmdlllnpkpcphndjiaohbakkjb)
-- Firefox addons []()
+- Chrome web store [RealTimeCat ScreenSharing Extension](https://chrome.google.com/webstore/detail/realtimecat-screensharing/kopddpjmdlllnpkpcphndjiaohbakkjb)
+- Firefox addons [RealTimeCat ScreenSharing](https://addons.mozilla.org/en-US/firefox/addon/realtimecat-screensharing/)
 
 ## 用于个人项目
 
