@@ -1,0 +1,19 @@
+{
+  "title": "RealTimeCat ScreenSharing Extension",
+  "name": "realtimecat-screensharing-extension",
+  "version": "0.3.0",
+  "description": "RealTimeCat ScreenSharing Extension 0.3",
+  "main": "index.js",
+  "author": "RealTimeCat",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT",
+  "permissions": {
+    "unsafe-content-script": true
+  },
+  "keywords": [
+    "RealTimeCat",
+    "ScreenSharing"
+  ]
+}

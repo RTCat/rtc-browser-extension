@@ -1,7 +1,7 @@
 {
   "name": "RealTimeCat ScreenSharing Extension",
-  "description": "RealTimeCat ScreenSharing Extension 0.2",
-  "version": "0.2.4",
+  "description": "RealTimeCat ScreenSharing Extension 0.3",
+  "version": "0.3.0",
   "manifest_version": 2,
   "icons": {
     "16":"icon16.png",
@@ -14,6 +14,14 @@
     ],
     "persistent": true
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "js": ["inject.js"]
+    }
+  ],
   "externally_connectable": {
     "matches": [
       "https://localhost/*",
