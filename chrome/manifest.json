@@ -1,7 +1,7 @@
 {
   "name": "RealTimeCat ScreenSharing Extension",
   "description": "RealTimeCat ScreenSharing Extension 0.3",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "manifest_version": 2,
   "icons": {
     "16":"icon16.png",
@@ -29,7 +29,8 @@
       "https://rtcat.io/*",
       "https://rtcat.io:4001/*",
       "https://ecloudeal.com/*",
-      "https://rtc-rooms.com/*"
+      "https://rtc-rooms.com/*",
+      "https://sishuedu.com/*"
     ]
   },
   "permissions": [
