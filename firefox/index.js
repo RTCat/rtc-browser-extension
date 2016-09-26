@@ -14,7 +14,7 @@ var myDomains = [
     "rtcat.io:4001",
     "ecloudeal.com",
     "rtc-rooms.com",
-    "sishuedu.com"
+    "v.sishuedu.com"
 ];
 
 // if(prefsService.has(enabledPrefKey)) {}
