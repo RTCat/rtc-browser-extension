@@ -29,6 +29,7 @@ clone项目至本地，修改 `chrome/manifest.json` 配置文件中的 `externa
 2. 修改改`package.json`, 参考[Mozilla文档](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/package_json)
 3. 在index.js中添加你的域名: [./firefox/index.js#L9](./firefox/index.js#L9)
 4. 生成 XPI。
+
 ```
 [sudo] npm install jpm --global
 
@@ -38,4 +39,5 @@ jpm run -b nightly      # test in Firefox Nightly without making the XPI
 
 jpm xpi                 # it will create xpi file
 ```
+
 5. 提交XPI:[https://addons.mozilla.org/en-US/developers](https://addons.mozilla.org/en-US/developers/addon/submit/1)
