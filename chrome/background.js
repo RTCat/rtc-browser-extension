@@ -5,18 +5,23 @@ chrome.runtime.onMessageExternal.addListener(
         if(request.getVersion)
         {
             sendResponse({version: chrome.runtime.getManifest().version});
-            return false;
         }else if(request.getStream){
             chrome.desktopCapture.chooseDesktopMedia(
                 ["screen", "window"], sender.tab,
-                function(streamId) {
-                    sendResponse({ streamId: streamId});
+                function(sourceId) {
+                        if (!sourceId || !sourceId.length) {
+                          sendResponse({ error: 'permissionDenied' });
+                          return;
+                        }            
+
+                    sendResponse({ streamId: sourceId});
                 });
             return true;
+        }else if(request.isInstalled){
+            sendResponse(true);
         }else{
             console.error("Unknown request");
             sendResponse({ error : "Unknown request" });
-            return false;
         }
     }
 );

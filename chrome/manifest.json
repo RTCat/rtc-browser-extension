@@ -24,7 +24,7 @@
   ],
   "externally_connectable": {
     "matches": [
-      "https://localhost/*",
+      "*://localhost:*/*",
       "https://shishimao.com/*",
       "https://rtcat.io/*",
       "https://rtcat.io:4001/*",
@@ -34,8 +34,6 @@
     ]
   },
   "permissions": [
-    "desktopCapture",
-    "https://*/*",
-    "tabs"
+    "desktopCapture"
   ]
 }
