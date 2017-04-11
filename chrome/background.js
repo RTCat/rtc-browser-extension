@@ -1,3 +1,4 @@
+"use strict";
 
 chrome.runtime.onMessageExternal.addListener(
     function (request, sender, sendResponse) {
@@ -10,7 +11,7 @@ chrome.runtime.onMessageExternal.addListener(
                 ["screen", "window"], sender.tab,
                 function(sourceId) {
                         if (!sourceId || !sourceId.length) {
-                          sendResponse({ error: 'permissionDenied' });
+                          sendResponse({ error: 'Permission denied' });
                           return;
                         }            
 
