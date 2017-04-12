@@ -1,7 +1,7 @@
 {
   "name": "RealTimeCat ScreenSharing Extension",
   "description": "RealTimeCat ScreenSharing Extension 0.3",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "manifest_version": 2,
   "icons": {
     "16":"icon16.png",
@@ -25,7 +25,7 @@
   "externally_connectable": {
     "matches": [
       "*://localhost:*/*",
-      "*://*.test.dev:*/*",
+      "https://*.test.dev:*/*",
       "https://shishimao.com/*",
       "https://rtcat.io:*/*",
       "https://ecloudeal.com/*",
