@@ -1,7 +1,7 @@
 {
   "title": "RealTimeCat ScreenSharing Extension",
   "name": "realtimecat-screensharing-extension",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "RealTimeCat ScreenSharing Extension 0.3",
   "main": "index.js",
   "author": "RealTimeCat",
