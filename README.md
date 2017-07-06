@@ -31,7 +31,7 @@ clone项目至本地，修改 `chrome/manifest.json` 配置文件中的 `externa
 4. 生成 XPI。
 
 ```
-[sudo] npm install jpm --global
+npm install jpm -g
 
 cd firefox
 

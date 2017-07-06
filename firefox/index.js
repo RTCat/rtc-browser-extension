@@ -9,12 +9,14 @@ var enabledPrefKey = 'media.getusermedia.screensharing.enabled';
 // replace your own domains with below array
 var myDomains = [
     "localhost",
+    "test.dev:3000",
     "shishimao.com",
     "rtcat.io",
     "rtcat.io:4001",
     "ecloudeal.com",
     "rtc-rooms.com",
-    "v.sishuedu.com"
+    "v.sishuedu.com",
+    "0meeting.com"
 ];
 
 // if(prefsService.has(enabledPrefKey)) {}
@@ -28,7 +30,7 @@ exports.main = function (options) {
     if (options.loadReason !== 'startup') {
         var curPrefs = prefsService.get(allowDomainsPrefKey).replace(/\s/g, '').split(',');
 
-        myDomains.forEach(function(domain){
+        myDomains.forEach(function (domain) {
             if (curPrefs.indexOf(domain) !== -1) {
                 return;
             }
@@ -40,40 +42,16 @@ exports.main = function (options) {
 
 exports.onUnload = function (reason) {
     if (reason === 'uninstall' || reason === 'disable') {
-        myDomains.forEach(function(domain){
+        myDomains.forEach(function (domain) {
             var curPref = prefsService.get(allowDomainsPrefKey);
-            var newPref = curPref.split(',').filter((pref) => pref.trim() != domain).join(',');
+            var newPref = curPref.split(',').filter((pref) => pref.trim() !== domain).join(',');
             prefsService.set(allowDomainsPrefKey, newPref);
         });
 
     }
 };
 
-/*
- * connect with webpage using postMessage
- * a webpage can use following API to check if screen capturing is enabled for his domains
- * @example window.postMessage({ checkIfScreenCapturingEnabled: true, domains: ['localhost']}, "*");
- */
-
 var pageMod = mod.PageMod({
-    include: myDomains.map(domain => domain[0] === '*' ? domain : `https://${domain}/*`),
-    contentScriptFile: "./../inject.js",
-    contentScriptWhen: "start", // or "ready"
-    onAttach: function(worker) {
-
-        worker.port.on("is-screen-capturing-enabled", function(domains) {
-            var isScreenCapturingEnabled = false;
-
-            prefsService.get(allowDomainsPrefKey).split(',').forEach(function(domain) {
-                if(domains.indexOf(domain) !== -1) {
-                    isScreenCapturingEnabled = true;
-                }
-            });
-
-            worker.port.emit('is-screen-capturing-enabled-response', {
-                isScreenCapturingEnabled: isScreenCapturingEnabled,
-                domains: domains
-            });
-        });
-    }
+    include: myDomains.map(domain => `*.${domain}/*`),
+    contentScriptFile: "./../inject.js"
 });
