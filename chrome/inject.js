@@ -1,1 +1,1 @@
-document.body.dataset.rtcExtensionInstalled = true;
+document.body.dataset.rtcExtensionId = chrome.runtime.id;
