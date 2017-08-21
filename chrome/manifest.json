@@ -1,11 +1,11 @@
 {
   "name": "RealTimeCat ScreenSharing Extension",
   "description": "RealTimeCat ScreenSharing Extension 0.3",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "manifest_version": 2,
   "icons": {
-    "16":"icon16.png",
-    "48":"icon48.png",
+    "16": "icon16.png",
+    "48": "icon48.png",
     "128": "icon128.png"
   },
   "background": {
@@ -17,16 +17,19 @@
   "content_scripts": [
     {
       "matches": [
-      "*://localhost/*",
-      "https://*.test.dev/*",
-      "https://shishimao.com/*",
-      "https://rtcat.io/*",
-      "https://ecloudeal.com/*",
-      "https://rtc-rooms.com/*",
-      "https://v.sishuedu.com/*",
-      "https://*.0meeting.com/*"      
-    ],
-      "js": ["inject.js"]
+        "*://localhost/*",
+        "https://*.test.dev/*",
+        "https://shishimao.com/*",
+        "https://rtcat.io/*",
+        "https://ecloudeal.com/*",
+        "https://rtc-rooms.com/*",
+        "https://v.sishuedu.com/*",
+        "https://*.0meeting.com/*",
+        "https://*.0meeting.xyz/*"
+      ],
+      "js": [
+        "inject.js"
+      ]
     }
   ],
   "externally_connectable": {
@@ -38,7 +41,8 @@
       "https://ecloudeal.com/*",
       "https://rtc-rooms.com/*",
       "https://v.sishuedu.com/*",
-      "https://*.0meeting.com/*"
+      "https://*.0meeting.com/*",
+      "https://*.0meeting.xyz/*"
     ]
   },
   "permissions": [
