@@ -1,7 +1,7 @@
 {
   "name": "RealTimeCat ScreenSharing Extension",
   "description": "RealTimeCat ScreenSharing Extension 0.3",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "manifest_version": 2,
   "icons": {
     "16": "icon16.png",
@@ -25,7 +25,8 @@
         "https://rtc-rooms.com/*",
         "https://v.sishuedu.com/*",
         "https://*.0meeting.com/*",
-        "https://*.0meeting.xyz/*"
+        "https://*.0meeting.xyz/*",
+        "https://*.linctime.com/*"
       ],
       "js": [
         "inject.js"
@@ -42,7 +43,8 @@
       "https://rtc-rooms.com/*",
       "https://v.sishuedu.com/*",
       "https://*.0meeting.com/*",
-      "https://*.0meeting.xyz/*"
+      "https://*.0meeting.xyz/*",
+      "https://*.linctime.com/*"
     ]
   },
   "permissions": [
