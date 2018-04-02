@@ -26,3 +26,54 @@ chrome.runtime.onMessageExternal.addListener(
         }
     }
 );
+
+let desktopMediaRequestId = '';
+
+chrome.runtime.onConnect.addListener(port => {
+  port.onMessage.addListener(msg => {
+    if (msg.type === 'STREAM_REQUEST') {
+      requestScreenSharing(port, msg);
+    }
+    if (msg.type === 'STREAM_CANCEL') {
+      cancelScreenSharing(msg);
+    }
+  });
+});
+
+function requestScreenSharing(port, msg) {
+  // https://developer.chrome.com/extensions/desktopCapture
+  // params:
+  //  - 'data_sources' Set of sources that should be shown to the user.
+  //  - 'targetTab' Tab for which the stream is created.
+  //  - 'streamId' String that can be passed to getUserMedia() API
+  // Also available:
+  //  ['screen', 'window', 'tab', 'audio']
+  const sources = ['screen', 'window'];
+  const tab = port.sender.tab;
+
+  desktopMediaRequestId = chrome.desktopCapture.chooseDesktopMedia(
+    sources,
+    tab,
+    streamId => {
+      if (!streamId || !streamId.length) {
+        msg.type = 'STREAM_ERROR';
+        msg.error = 'Permission Denied'
+      } else {
+        msg.type = 'STREAM_SUCCESS';
+        msg.streamId = streamId;
+      }
+      port.postMessage(msg);
+    }
+  );
+}
+
+function cancelScreenSharing(msg) {
+  if (desktopMediaRequestId) {
+    chrome.desktopCapture.cancelChooseDesktopMedia(desktopMediaRequestId);
+  }
+}
+
+
+
+
+
