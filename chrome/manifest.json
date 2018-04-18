@@ -1,7 +1,7 @@
 {
-  "name": "RealTimeCat ScreenSharing Extension",
-  "description": "RealTimeCat ScreenSharing Extension 0.4",
-  "version": "0.4.0",
+  "name": "Linctime ScreenSharing Extension",
+  "description": "Linctime ScreenSharing Extension 0.5",
+  "version": "0.5.0",
   "manifest_version": 2,
   "icons": {
     "16": "icon16.png",
@@ -24,8 +24,6 @@
         "https://ecloudeal.com/*",
         "https://rtc-rooms.com/*",
         "https://v.sishuedu.com/*",
-        "https://*.0meeting.com/*",
-        "https://*.0meeting.xyz/*",
         "https://*.linctime.com/*"
       ],
       "js": [
@@ -35,19 +33,19 @@
   ],
   "externally_connectable": {
     "matches": [
-      "*://localhost:*/*",
-      "https://*.test.dev:*/*",
+      "*://localhost/*",
+      "https://*.test.dev/*",
       "https://shishimao.com/*",
-      "https://rtcat.io:*/*",
+      "https://rtcat.io/*",
       "https://ecloudeal.com/*",
       "https://rtc-rooms.com/*",
       "https://v.sishuedu.com/*",
-      "https://*.0meeting.com/*",
-      "https://*.0meeting.xyz/*",
       "https://*.linctime.com/*"
     ]
   },
   "permissions": [
-    "desktopCapture"
+    "desktopCapture",
+    "*://localhost/*",
+    "https://*.linctime.com/*"
   ]
 }

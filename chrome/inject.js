@@ -1,26 +1,31 @@
-document.body.dataset.rtcExtensionId = chrome.runtime.id;
+document.body.dataset.rtcExtensionId = chrome.runtime.id
 
-const port = chrome.runtime.connect(chrome.runtime.id);
+const port = chrome.runtime.connect(chrome.runtime.id)
 port.onMessage.addListener(msg => {
-  window.postMessage(msg, '*');
-});
+  window.postMessage(msg, '*')
+})
 
 window.addEventListener(
   'message',
   event => {
     // Only accept messages from ourselves
     if (event.source !== window) {
-      return;
+      return
     }
     // Only accept events with a data type
     if (!event.data.type) {
-      return;
+      return
     }
 
     if (['STREAM_REQUEST', 'STREAM_CANCEL'].includes(event.data.type)) {
-      port.postMessage(event.data);
+      port.postMessage(event.data)
+    }
+
+    if (event.data.type === 'LINCTIME_PING') {
+      window.postMessage({type: 'LINCTIME_PONG'}, '*')
     }
   },
   false
-);
+)
 
+window.postMessage({type: 'LINCTIME_PONG'}, '*')
