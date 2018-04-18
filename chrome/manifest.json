@@ -1,12 +1,16 @@
 {
   "name": "Linctime ScreenSharing Extension",
   "description": "Linctime ScreenSharing Extension 0.5",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "manifest_version": 2,
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
     "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon32.png",
+    "default_title": "Linctime ScreenSharing Extension"
   },
   "background": {
     "scripts": [
@@ -24,7 +28,8 @@
         "https://ecloudeal.com/*",
         "https://rtc-rooms.com/*",
         "https://v.sishuedu.com/*",
-        "https://*.linctime.com/*"
+        "https://*.linctime.com/*",
+        "https://*.baijiayun.com/*"
       ],
       "js": [
         "inject.js"
@@ -46,6 +51,7 @@
   "permissions": [
     "desktopCapture",
     "*://localhost/*",
-    "https://*.linctime.com/*"
+    "https://*.linctime.com/*",
+    "https://*.baijiayun.com/*"
   ]
 }
