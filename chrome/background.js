@@ -7,7 +7,7 @@ chrome.runtime.onMessageExternal.addListener(
       sendResponse({version: chrome.runtime.getManifest().version})
     } else if (request.getStream) {
       chrome.desktopCapture.chooseDesktopMedia(
-        ['window', 'screen', 'tab'], sender.tab,
+        ['screen', 'window', 'tab'], sender.tab,
         function (sourceId) {
           if (!sourceId || !sourceId.length) {
             sendResponse({error: 'Permission denied'})
@@ -47,7 +47,7 @@ function requestScreenSharing (port, msg) {
   //  - 'streamId' String that can be passed to getUserMedia() API
   // Also available:
   //  ['screen', 'window', 'tab', 'audio']
-  const sources = ['window', 'screen', 'tab']
+  const sources = ['screen','window', 'tab']
   const tab = port.sender.tab
 
   desktopMediaRequestId = chrome.desktopCapture.chooseDesktopMedia(
